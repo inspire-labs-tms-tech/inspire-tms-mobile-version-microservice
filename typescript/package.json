@@ -1,0 +1,24 @@
+{
+  "name": "inspire-tms-mobile-version-microservice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "index.ts"
+  ],
+  "scripts": {
+    "build": "npm run build:client && npm run build:types",
+    "build:types": "tsup index.ts",
+    "build:client": "node build.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "swagger-typescript-api": "^13.0.23",
+    "tsup": "^8.3.5"
+  }
+}
