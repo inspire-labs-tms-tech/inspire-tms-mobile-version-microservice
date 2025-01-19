@@ -1,7 +1,7 @@
 package cfg
 
 import (
-	"log"
+	"github.com/fatih/color"
 	"os"
 )
 
@@ -15,10 +15,12 @@ func init() {
 	GoogleAppId = os.Getenv("GOOGLE_APP_ID")
 
 	if AppleBundleId == "" {
-		log.Fatal("APPLE_BUNDLE_ID runtime variable not set")
+		color.Red("APPLE_BUNDLE_ID runtime variable not set")
+		os.Exit(1)
 	}
 
 	if GoogleAppId == "" {
-		log.Fatal("GOOGLE_APP_ID runtime variable not set")
+		color.Red("GOOGLE_APP_ID runtime variable not set")
+		os.Exit(1)
 	}
 }
