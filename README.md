@@ -9,6 +9,12 @@ Apple App Store and Google Play Store.
 
 https://inspire-labs-tms-tech.github.io/inspire-tms-mobile-version-microservice/
 
+
+## Caching
+
+Requests are cached with a 10-minute expiration time to avoid spam and flagging by Apple and Google.
+
+
 ## Deploying
 
 > Note: Change the bundles `com.example.*` below to match your application
