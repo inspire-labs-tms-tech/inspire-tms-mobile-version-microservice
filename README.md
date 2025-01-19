@@ -3,11 +3,13 @@
 A microservice to retrieve the public (released) version of an application from the
 Apple App Store and Google Play Store.
 
-## Endpoints
+## API Documentation
 
+https://inspire-labs-tms-tech.github.io/inspire-tms-mobile-version-microservice/
 
+## Deploying
 
-## Using
+> Note: Change the bundles `com.example.*` below to match your application
 
 ```shell
 docker run \
