@@ -3,6 +3,10 @@
 A microservice to retrieve the public (released) version of an application from the
 Apple App Store and Google Play Store.
 
+## Endpoints
+
+
+
 ## Using
 
 ```shell
