@@ -1,0 +1,13 @@
+spec:
+  name: mobile-version-microservice
+  services:
+    - dockerfile_path: Dockerfile
+      git:
+        branch: main
+        repo_clone_url: https://github.com/inspire-labs-tms-tech/inspire-tms-mobile-version-microservice.git
+      name: mobile-version-microservice
+      envs:
+        - key: APPLE_BUNDLE_ID
+          scope: RUN_TIME
+        - key: GOOGLE_APP_ID
+          scope: RUN_TIME

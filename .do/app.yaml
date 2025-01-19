@@ -1,0 +1,8 @@
+name: Inspire TMS Mobile Version Microservice
+services:
+  - dockerfile_path: Dockerfile
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: inspire-labs-tms-tech/inspire-tms-mobile-version-microservice
+    name: mobile-version-microservice

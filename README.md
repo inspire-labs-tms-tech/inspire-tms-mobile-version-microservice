@@ -3,6 +3,8 @@
 A microservice to retrieve the public (released) version of an application from the
 Apple App Store and Google Play Store.
 
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/inspire-labs-tms-tech/inspire-tms-mobile-version-microservice/tree/main)
+
 ## API Documentation
 
 https://inspire-labs-tms-tech.github.io/inspire-tms-mobile-version-microservice/
