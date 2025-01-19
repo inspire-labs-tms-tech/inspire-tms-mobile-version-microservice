@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 golang:1.23 AS builder
+FROM golang:1.23 AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN go mod download
 COPY . .
 RUN go build -o server .
 
-FROM --platform=linux/amd64 alpine:3.21
+FROM alpine:3.21
 
 WORKDIR /app
 RUN apk --no-cache add ca-certificates
