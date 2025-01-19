@@ -2,7 +2,9 @@ package routes
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"github.com/inspire-labs-tms-tech/inspire-tms-mobile-version-microservice/cfg"
 	"github.com/inspire-labs-tms-tech/inspire-tms-mobile-version-microservice/internal/routes/responses"
 	"io"
 	"net/http"
@@ -15,10 +17,9 @@ type iTunesResponse struct {
 	} `json:"results"`
 }
 
-const url = "https://itunes.apple.com/lookup?bundleId=com.inspiretmstech.mobile"
-
 func GetAppleAppStoreVersion(c *fiber.Ctx) error {
 
+	var url = fmt.Sprintf("https://itunes.apple.com/lookup?bundleId=%s", cfg.AppleBundleId)
 	resp, err := http.Get(url)
 
 	if err != nil {
