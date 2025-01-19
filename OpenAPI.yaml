@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: Version Microservice
+  description: A microservice to fetch version information for Apple and Google platforms.
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8080
+    description: Local Development Server
+paths:
+  /ping:
+    get:
+      summary: Health check
+      description: Returns a simple JSON response to check if the service is running.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "pong"
+
+  /apple:
+    get:
+      summary: Get Apple App Version
+      description: Fetches the current version of the application from the Apple App Store.
+      responses:
+        '200':
+          description: Successful response with version information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+              examples:
+                success:
+                  value:
+                    version: "1.2.3"
+                    error: ""
+                error:
+                  value:
+                    version: ""
+                    error: "Failed to fetch version from Apple App Store"
+        '500':
+          description: Error occurred while fetching the version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+              example:
+                version: ""
+                error: "Failed to fetch version from Apple App Store"
+
+  /google:
+    get:
+      summary: Get Google Play Version
+      description: Fetches the current version of the application from the Google Play Store.
+      responses:
+        '200':
+          description: Successful response with version information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+              examples:
+                success:
+                  value:
+                    version: "4.5.6"
+                    error: ""
+                error:
+                  value:
+                    version: ""
+                    error: "Failed to fetch version from Google Play Store"
+        '500':
+          description: Error occurred while fetching the version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+              example:
+                version: ""
+                error: "Failed to fetch version from Google Play Store"
+
+components:
+  schemas:
+    VersionResponse:
+      type: object
+      properties:
+        version:
+          type: string
+          description: The current version of the application.
+          example: "1.0.0"
+        error:
+          type: string
+          description: An error message if fetching the version fails.
+          example: "Failed to fetch version"
