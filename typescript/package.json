@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "npm run build:client && npm run build:types",
-    "build:types": "tsup index.ts",
+    "build:types": "tsup index.ts && mv ./dist/* . && rmdir ./dist",
     "build:client": "node build.mjs",
     "prepublishOnly": "npm run build"
   },
