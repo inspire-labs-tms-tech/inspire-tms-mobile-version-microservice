@@ -1,11 +1,12 @@
 {
   "name": "@inspire-labs-tms-tech/inspire-tms-mobile-version-microservice",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "module": "index.mjs",
   "types": "index.d.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "index.ts"
